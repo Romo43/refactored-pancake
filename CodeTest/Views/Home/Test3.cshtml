@@ -1,4 +1,24 @@
-﻿@{
+﻿@model List<PruebaIngreso.Controllers.HomeController.ApiResponse>
+
+@{
     ViewBag.Title = "Test 3";
 }
 <h2>@ViewBag.Title.</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Service Code</th>
+            <th scope="col">Margin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var response in Model)
+        {
+            <tr>
+                <th scope="row">@response.Code</th>
+                <td>@response.Margin</td>
+            </tr>
+        }
+    </tbody>
+</table>
